@@ -1,0 +1,30 @@
+<br/><a routerLink="/nuevocliente" class="btn btn-primary">Agregar cliente</a><br/>
+<br/><h3 class="text-center card-title">Listado de Clientes</h3><br/>
+<div *ngIf="clientes.length>0">
+  <div class="container">
+    <label>Cliente: <input class="form-control" placeholder="Ingrese nombre" [(ngModel)]="nombre"></label>
+    <button  (click)="buscarCliente()" class="btn btn-primary mr-3">Buscar</button>
+    <table border="1" class="table table-bordered table-hover table-center">
+      <thead class="thead-dark text-center">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>RUC</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of clientes">
+        <td>{{c.id_clientes}}</td>
+        <td>{{c.nombre}}</td>
+        <td>{{c.ruc}}</td>
+        <td>{{c.email}}</td>
+        <td><a routerLink="/modificarcliente/{{c.id_clientes}}" class="btn btn-primary">Editar</a></td>
+        <td><button (click)="deleteItem(c.id_clientes)" class="btn btn-primary">Eliminar</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<br/><br/>
+<div class="container col-md-5 offset-md-3 card">
+  <br><h3 class="text-center">Registro de Clientes</h3><br>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="cliente.nombre">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese RUC" [(ngModel)]="cliente.ruc">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese E-mail" [(ngModel)]="cliente.email">
+  </div>
+  <button class="btn btn-primary form-control" (click)="guardar()">Guardar</button>
+  <br/><br/>{{mensaje}}<br/><br/>
+</div>

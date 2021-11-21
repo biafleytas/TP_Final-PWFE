@@ -1,0 +1,12 @@
+<br/><br/>
+<div class="col-md-5 offset-md-3">
+  <br><h3 class="text-center">Registro de Ventas</h3><br>
+    <input class="form-control" placeholder="Ingrese Nro Factura" [(ngModel)]="venta.factura"><br>
+    <input class="form-control" placeholder="Ingrese Cliente" [(ngModel)]="venta.id_clientes"><br>
+    <input class="form-control" placeholder="Ingrese Fecha" [(ngModel)]="venta.fecha"><br>
+  <button class="btn btn-outline-light" (click)="guardar()"></button>
+  <br>
+  <a routerLink="/nuevaventa/{{idVenta}}" class="btn btn-primary">Agregar Detalles</a>
+  <br/><br/>{{mensaje}}<br/><br/>
+</div>
+

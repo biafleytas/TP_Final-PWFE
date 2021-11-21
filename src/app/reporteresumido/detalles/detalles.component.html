@@ -1,0 +1,27 @@
+<br/><h3 class="text-center card-title">Detalles de Venta</h3><br/>
+<div class="form-group">
+  <p class="text-center text-muted">Cliente: {{venta.ventaCliente.nombre}} &nbsp;&nbsp;&nbsp; Fecha: {{venta.fecha}}&nbsp;&nbsp;&nbsp;Total: {{venta.total}}</p>
+</div>
+<div *ngIf="venta.detalleVenta.length>0">
+  <div class="container">
+    <table border="1" class="table table-bordered table-hover table-center">
+      <thead class="thead-dark text-center">
+      <tr>
+        <th>Id</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let d of venta.detalleVenta">
+        <td>{{d.id_detalles}}</td>
+        <td>{{d.id_productos}}</td>
+        <td>{{d.cantidad}}</td>
+        <td>{{d.total}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,30 @@
+<br/><h3 class="text-center card-title">Reporte resumido de Ventas</h3><br/>
+<div *ngIf="ventas.length>0">
+  <div class="container">
+    <label>Cliente: <input class="form-control" placeholder="Ingrese id" [(ngModel)]="cliente"></label>
+    <button  (click)="buscarCliente()" class="btn btn-primary mr-3">Buscar</button>
+    <label>Desde: <input class="form-control" placeholder="Fecha Desde" [(ngModel)]="desde"></label>
+    <label>Hasta: <input class="form-control" placeholder="Fecha Hasta" [(ngModel)]="hasta"></label>
+    <button  (click)="buscarFecha()" class="btn btn-primary mr-3">Buscar</button>
+    <table border="1" class="table table-bordered table-hover table-center">
+      <thead class="thead-dark text-center">
+      <tr>
+        <th>Id</th>
+        <th>Cliente</th>
+        <th>Fecha</th>
+        <th>Total</th>
+        <th>Factura</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let v of ventas">
+        <td>{{v.id_ventas}}</td>
+        <td>{{v.ventaCliente.nombre}}</td>
+        <td>{{v.fecha}}</td>
+        <td>{{v.total}}</td>
+        <td>{{v.factura}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

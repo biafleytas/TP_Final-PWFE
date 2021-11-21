@@ -1,0 +1,28 @@
+<br/><a routerLink="/nuevaventa" class="btn btn-primary">Agregar venta</a><br/>
+<br/><h3 class="text-center card-title">Listado de Ventas</h3><br/>
+<div *ngIf="ventas.length>0">
+  <div class="container">
+    <table border="1" class="table table-bordered table-hover table-center">
+      <thead class="thead-dark text-center">
+      <tr>
+        <th>Id</th>
+        <th>Cliente</th>
+        <th>Fecha</th>
+        <th>Total</th>
+        <th>Factura</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let v of ventas">
+        <td>{{v.id_ventas}}</td>
+        <td>{{v.ventaCliente.nombre}}</td>
+        <td>{{v.fecha}}</td>
+        <td>{{v.total}}</td>
+        <td>{{v.factura}}</td>
+        <td><a routerLink="/detalles/{{v.id_ventas}}" class="btn btn-primary">Ver Detalles</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

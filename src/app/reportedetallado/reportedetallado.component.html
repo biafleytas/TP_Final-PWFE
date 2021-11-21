@@ -1,0 +1,30 @@
+<br/><h3 class="text-center card-title">Reporte detallado de Ventas</h3><br/>
+<div *ngIf="detalles.length>0">
+  <div class="container">
+    <label>Producto: <input class="form-control" placeholder="Ingrese id" [(ngModel)]="producto"></label>
+    <button  (click)="buscarProducto()" class="btn btn-primary mr-3">Buscar</button>
+    <table border="1" class="table table-bordered table-hover table-center">
+      <thead class="thead-dark text-center">
+      <tr>
+        <th>Id</th>
+        <th>Cliente</th>
+        <th>Fecha</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let d of detalles">
+        <td>{{d.id_detalles}}</td>
+        <td>{{d.detallesVenta.id_clientes}}</td>
+        <td>{{d.detallesVenta.fecha}}</td>
+        <td>{{d.detallesProducto.nombre}}</td>
+        <td>{{d.cantidad}}</td>
+        <td>{{d.total}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
